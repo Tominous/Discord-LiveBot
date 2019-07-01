@@ -104,7 +104,7 @@ function load(token) {
   bot.on('message', (m) => {
     if (selectedChan) {
       if (m.channel.id == selectedChan.id) {
-        //document.getElementById('message-list').removeChild(document.getElementById('message-list').firstChild);
+        document.getElementById('message-list').removeChild(document.getElementById('message-list').firstChild);
         let bunch;
         fetchLast();
 
@@ -507,7 +507,7 @@ let helpMsg = [
   '/shrug - Prepends ¯\\_(ツ)_/¯ to your message.',
   '/tableflip - Prepends (╯°□°）╯︵ ┻━┻ to your message.',
   '/ping - Check the hearbeat to discord.',
-  '/server - Get some info about the server.',
+  '/server - Get some information about the server.',
   '/eval - Execute a command.'
 ].join('\n')
 
@@ -540,11 +540,11 @@ function sendmsg() {
 
         case 'server':
           let serverinfo = [
-            'Here is some info about '+selectedChan.guild.name+'. \n',
+            'Here is some information about '+selectedChan.guild.name+'. \n',
             'Members - '+selectedChan.guild.memberCount,
             'Channels - '+selectedChan.guild.channels.size,
             'Roles - '+selectedChan.guild.roles.size,
-            'Id - '+selectedChan.guild.id,
+            'ID - '+selectedChan.guild.id,
             'Owner - '+selectedChan.guild.owner.user.tag
           ].join('\n');
           command(serverinfo);
